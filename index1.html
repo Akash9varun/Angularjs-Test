@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <title>Document</title>
+
+    <script>
+
+        var app = angular.module("myApp", []);
+        
+        app.controller("myCtrl", function($scope) {
+         
+                $scope.name="PSR Kumar"
+                $scope.phone="9441111667"
+
+                //https://gorest.co.in/public/v1/users
+
+        $scope.runMyfunction=function(){
+
+            $scope.obj.dob="21-12-2000";
+
+
+        }
+                
+
+        });
+        
+        </script>
+
+</head>
+<body >
+    <div ng-app="myApp" ng-controller="myCtrl">
+            Angular Div<br/>
+
+            {{name}}
+            {{phone}}
+
+            <br/>
+            
+           
+            <label >Enter Name</label>
+            <input type="text" required ng-model="obj.name">
+            <br/>
+
+
+            <label>Enter Phone Number</label>
+            <input type="text" ng-model="obj.phone" required>
+            <br/>
+            <label>Enter address</label>
+            <input type="text" ng-model="obj.address" required>
+            <br/>
+
+
+            <input type="button" value="Click" ng-click="runMyfunction()" class="btn btn-primary">
+            </form>
+
+            
+
+            <pre>{{obj |json}}</pre>
+    </div>
+
+
+    <div>
+        {{name}}
+        Plain Div
+
+    </div>
+</body>
+</html>
